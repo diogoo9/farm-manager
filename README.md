@@ -8,7 +8,7 @@ Project brain 🚀 desenvolvido usando as melhores práticas e com nestjs, typeo
 
 ## Diagrama do projeto
 
-![title](info/serasa%20-%20public.png)
+![title](info/public.png)
 
 # RODANDO COM DOCKER
 
