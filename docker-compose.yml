@@ -7,18 +7,18 @@ services:
     environment:
       POSTGRES_PASSWORD: 1234
       POSTGRES_USER: user
-      POSTGRES_DB: backcar
+      POSTGRES_DB: serasa
     volumes:
       - pgdata:/data/postgres
     ports:
       - 5432:5432
   app:
     build: .
-    container_name: backcar
+    container_name: serasa
     ports:
       - 3000:3000
     volumes:
-      - .:/usr/local/app/backcar
+      - .:/usr/local/app/serasa
     links:
       - db
     depends_on:

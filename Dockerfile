@@ -1,19 +1,17 @@
-FROM node:22.11.0
-
+FROM node:22-bullseye
 
 WORKDIR /user/local/app
 
 COPY package.json ./
+COPY package-lock.json ./
 
-RUN npm install 
+
+
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
-COPY .env /user/local/app/
-
-RUN npm i -g @nestjs/cli
-
-RUN npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata class-validator class-transformer
+COPY .env.docker ./.env
 
 CMD npm run dev
 

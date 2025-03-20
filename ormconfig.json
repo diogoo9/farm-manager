@@ -1,9 +1,9 @@
 {
   "name": "default",
   "type": "postgres",
-  "host": "localhost",
+  "host": "db",
   "port": 5432,
-  "username": "postgres",
+  "username": "user",
   "password": "1234",
   "database": "serasa",
   "entities": ["dist/**/*.entity{.ts,.js}"],

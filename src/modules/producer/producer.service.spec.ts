@@ -13,6 +13,7 @@ describe('ProducerService', () => {
     getById: jest.fn(),
     updateProducer: jest.fn(),
     deleteProducer: jest.fn(),
+    getAllWithRelations: jest.fn(),
   };
 
   beforeEach(async () => {
@@ -29,6 +30,7 @@ describe('ProducerService', () => {
     jest.spyOn(mockRepository, 'getById');
     jest.spyOn(mockRepository, 'updateProducer');
     jest.spyOn(mockRepository, 'deleteProducer');
+    jest.spyOn(mockRepository, 'getAllWithRelations');
     service = module.get<ProducerService>(ProducerService);
   });
 
@@ -63,10 +65,10 @@ describe('ProducerService', () => {
   });
 
   it('should be able findAll', async () => {
-    mockRepository.getAll.mockReturnValue([]);
+    mockRepository.getAllWithRelations.mockReturnValue([]);
 
     expect(await service.findAll()).toEqual([]);
-    expect(mockRepository.getAll).toHaveBeenCalledTimes(1);
+    expect(mockRepository.getAllWithRelations).toHaveBeenCalledTimes(1);
   });
 
   it('should be able not update producer', async () => {

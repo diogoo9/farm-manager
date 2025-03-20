@@ -31,7 +31,7 @@ export class ProducerRepository
   }
 
   async getAllWithRelations(): Promise<Producer[]> {
-    const a = await this.createQueryBuilder('producers')
+    return await this.createQueryBuilder('producers')
       .leftJoinAndSelect('producers.farms', 'farms')
       .leftJoinAndSelect('farms.city', 'city')
       .leftJoinAndSelect('city.state', 'state')
@@ -50,14 +50,6 @@ export class ProducerRepository
         'state',
       ])
       .getMany();
-
-    console.log(a);
-    return a;
-
-    return this.find({
-      where: { deleted_at: null },
-      relations: ['farms', 'farms.crops'],
-    });
   }
 
   getById(id: string): Promise<Producer> {

@@ -24,7 +24,6 @@
     "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
     "migration:create": "npm run typeorm migration:create  ./src/database/migrations/$npm_config_name",
     "migration:run": "nest build && npm run typeorm migration:run -- -d src/config/typeorm.ts",
-    "seed:run1": "nest build && npm run typeorm migration:run -- -d src/config/typeormSeed.ts",
     "migration:revert": "npm run typeorm migration:revert -- -d src/config/typeorm.ts"
   },
   "dependencies": {
@@ -97,9 +96,6 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
