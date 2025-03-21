@@ -48,7 +48,7 @@ exit;
 
 para verificar o funcionamento podemos acessar os links abaixo
 
-[SWAGGER - http://localhost:3000/swagger](http://localhost:3000/swagger)
+[SWAGGER - http://localhost:3000/swagger#/](http://localhost:3000/swagger#/)
 
 [API - http://localhost:3000](http://localhost:3000)
 
